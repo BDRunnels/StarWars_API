@@ -1,0 +1,24 @@
+body > * {
+    background: rgb(74, 73, 73);
+    color: white;
+    margin-top: 7vh;
+}
+
+/* .container {
+    border: 2px solid white;
+} */
+
+.d-sm-grid {
+    max-width: 768px;
+}
+
+.img-thumbnail {
+    max-width: 10vw;
+    max-height: 5vh;
+}
+
+.bg-image {
+    /* height: 10vh !important;
+    width: 25vw !important; */
+    border-radius: 10%;
+}
