@@ -5,24 +5,33 @@ import { Fragment } from "react";
 
 import "./episode.styles.css";
 
-const Episode = ({filmData}) => {
+const Episode = ({filmData, peopleData}) => {
     const { episodeId } = useParams();
 
+    // Filter through films and retrieve film matching params id.
     const singleEpisode = filmData.filter((film) => {
         
         return film.episode_id  === parseInt(episodeId);
     });
 
-    console.log(singleEpisode[0])
+    // Find characters that match the rendered episode
+
+
+    console.log(singleEpisode[0])    
+
     return (
         <Fragment>
             <h1 className='text-center'> {singleEpisode[0].title}</h1>
-            <p className='text-center container'> {singleEpisode[0].opening_crawl}</p>
+            <div className='container episode-container'> 
+                
+                <h6> Screen Crawl </h6>
+                <span>"{singleEpisode[0].opening_crawl}"</span>
+            </div>
             <div className='container'>
                 
                 <MDBAccordion >
                     <br/>
-                    <MDBAccordionItem collapseId={1} headerTitle={<><MDBIcon fas icon="camera" /> &nbsp; Movie Information</>}>
+                    <MDBAccordionItem  headerClassName='accHead' bodyClassName='accItem' collapseId={1} headerTitle={<><MDBIcon fas icon="camera" /> &nbsp; Movie Information</>}>
                         <ul>
                             <li> Directed By: {singleEpisode[0].director}</li>
                             <li> Produced By: {singleEpisode[0].producer}</li>
@@ -30,49 +39,64 @@ const Episode = ({filmData}) => {
                         </ul>
                     </MDBAccordionItem>
                     <br/>
-                    <MDBAccordionItem collapseId={2} headerTitle={<><MDBIcon fas icon="portrait" /> &nbsp; Characters </>}>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={2} headerTitle={<><MDBIcon fas icon="portrait" /> &nbsp; Characters </>}>
+                        <ul>
+                            {
+                                singleEpisode[0].characters && peopleData ? singleEpisode[0].characters.map((character) => {
+                                    return (
+                                        <li> {character}</li>
+                                    )
+                                }) : 'No Characters in Movie'
+                            }
+                        </ul>
                     </MDBAccordionItem>
                     <br/>
-                    <MDBAccordionItem collapseId={3} headerTitle={<><MDBIcon fas icon="globe-americas" /> &nbsp; Planets </>}>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={3} headerTitle={<><MDBIcon fas icon="globe-americas" /> &nbsp; Planets </>}>
+                        <ul>
+                            {
+                                singleEpisode[0].planets ? singleEpisode[0].planets.map((planet) => {
+                                    return (
+                                        <li> {planet}</li>
+                                    )
+                                }) : 'No Planets in Movie'
+                            }
+                        </ul>
                     </MDBAccordionItem>
                     <br/>
-                    <MDBAccordionItem collapseId={4} headerTitle={<><MDBIcon fas icon="car-alt" /> &nbsp; Vehicles </>}>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={4} headerTitle={<><MDBIcon fas icon="car-alt" /> &nbsp; Vehicles </>}>
+                        <ul>
+                            {
+                                singleEpisode[0].vehicles  ? singleEpisode[0].vehicles.map((vehicle) => {
+                                    return (
+                                        <li> {vehicle}</li>
+                                    )
+                                }) : 'No Vehicles in Movie'
+                            }
+                        </ul>
                     </MDBAccordionItem>
                     <br/>
-                    <MDBAccordionItem collapseId={5} headerTitle={<><MDBIcon fas icon="space-shuttle" /> &nbsp; Starships </>}>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={5} headerTitle={<><MDBIcon fas icon="space-shuttle" /> &nbsp; Starships </>}>
+                        <ul>
+                            {
+                                singleEpisode[0].starships  ? singleEpisode[0].starships.map((starship) => {
+                                    return (
+                                        <li> {starship}</li>
+                                    )
+                                }) : 'No Starships in Movie'
+                            }
+                        </ul>
                     </MDBAccordionItem>
                     <br/>
-                    <MDBAccordionItem collapseId={6} headerTitle={<><MDBIcon fas icon="genderless" /> &nbsp; Species </>}>
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-                        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-                        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-                        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={6} headerTitle={<><MDBIcon fas icon="genderless" /> &nbsp; Species </>}>
+                        <ul>
+                            {
+                                singleEpisode[0].species ? singleEpisode[0].species.map((specie) => {
+                                    return (
+                                        <li> {specie}</li>
+                                    )
+                                }) : 'No Species in Movie'
+                            }
+                        </ul>
                     </MDBAccordionItem>
                 </MDBAccordion>
             </div>    

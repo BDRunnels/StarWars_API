@@ -7,6 +7,7 @@ import { MDBContainer } from 'mdb-react-ui-kit';
 import Navigation from "./components/navigation/navigation";
 import Films from "./components/category/films";
 import Episode from "./components/episode/episode";
+import People from "./components/category/people";
 
 const DATA_URL = 'https://swapi.py4e.com/api'
 
@@ -34,10 +35,19 @@ const App = () => {
     // Fetching People Data
     async function fetchPeopleData () {
         try {
-            const response = await fetch(`${DATA_URL}/people`);
+            // Initializing Page Count for API
+            let pageCount = 1;
+            // Initializing empty array to hold contents of API (10 results per page)
+            let peopleArray = []
+            // For Loop to access all API elements (87 total, 9 pages)
+            for (pageCount ; pageCount <= 9; pageCount++) {
+
+                const response = await fetch(`${DATA_URL}/people/?page=${pageCount}`);
+                const translatedData =  await response.json();
+                peopleArray.push(translatedData.results)
+            };
             
-            const translatedData =  await response.json();
-            setPeopleData(translatedData);
+            setPeopleData(peopleArray.flat());
            
         } catch (error) {
             console.log('error fetching all data', error);
@@ -111,7 +121,8 @@ const App = () => {
             <Navigation />
             <Routes>
                 <Route path='/films' element={<Films filmData={filmData}/>} />
-                <Route path='/films/:episodeId' element={<Episode filmData={filmData} />}/>
+                <Route path='/films/:episodeId' element={<Episode filmData={filmData} peopleData={peopleData} />}/>
+                <Route path='/people' element={<People peopleData={peopleData}/>} />
             </Routes>
         
         </Fragment>

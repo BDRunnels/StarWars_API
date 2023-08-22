@@ -4,3 +4,23 @@ body {
     margin-top: 7vh;
 }
 
+.accItem {
+    background-color: black;
+    color: white;
+}
+
+.episode-container {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+h6{
+    width: 100px;
+    margin-top:-10px;
+    margin-left:5px;
+    background: white;
+    border: 2px solid black;
+    color: black;
+}

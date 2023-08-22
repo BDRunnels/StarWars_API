@@ -37,33 +37,33 @@ const Navigation = () => {
           >
             <MDBIcon icon='bars' fas  />
           </MDBNavbarToggler>
-          <MDBNavbarLink href='/'> <img className='img-thumbnail' src='https://filmartgallery.com/cdn/shop/t/27/assets/star-wars-banner.jpeg?v=80624120874934922901668841836' /> ALL STAR WARS </MDBNavbarLink>
+          <MDBNavbarLink href='/films'> <img className='img-thumbnail' src='https://filmartgallery.com/cdn/shop/t/27/assets/star-wars-banner.jpeg?v=80624120874934922901668841836' /> ALL STAR WARS </MDBNavbarLink>
           <MDBCollapse navbar show={showNavNoTogglerThird} bgColor='danger'>
             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0 justify-content-end '>
               <MDBNavbarItem>
                 <MDBNavbarLink active aria-current='page' href='/films'>
-                    <MDBBtn color="success" className='me-2' rippleColor='blue' type='button'>
+                    <MDBBtn outline color="white" className='me-2' rippleColor='white' type='button'>
                         FILMS
                     </MDBBtn>
                 </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='#'>
-                    <MDBBtn color="success" className='me-2' rippleColor='blue' type='button'>
+                <MDBNavbarLink active aria-current='page' href='/people'>
+                    <MDBBtn outline color="white" className='me-2' rippleColor='white' type='button'>
                         PEOPLE
                     </MDBBtn>
                 </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink active aria-current='page' href='#'>
-                    <MDBBtn color="success" className='me-2' rippleColor='blue' type='button'>
+                    <MDBBtn outline color="white" className='me-2' rippleColor='white' type='button'>
                         VEHICLES
                     </MDBBtn>
                 </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink active aria-current='page' href='#'>
-                    <MDBBtn color="success" className='me-2' rippleColor='blue' type='button'>
+                    <MDBBtn outline color="white" className='me-2' rippleColor='white' type='button'>
                         STARSHIPS
                     </MDBBtn>
                 </MDBNavbarLink>
