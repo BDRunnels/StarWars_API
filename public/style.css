@@ -20,5 +20,13 @@ body > * {
 .bg-image {
     /* height: 10vh !important;
     width: 25vw !important; */
-    border-radius: 10%;
+    border-radius: 0;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 5.15) !important;
+    background-color: black;
+}
+
+.custom-hoverable:hover {
+    background-color: white;
+    color: #ff3;
+    border-color: blue;
 }

@@ -1,0 +1,14 @@
+.container {
+    background-color: rgb(7, 7, 7);
+    border-radius: 3%;
+}
+
+.d-flex {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 5.15) !important;
+  }

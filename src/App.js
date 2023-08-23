@@ -8,6 +8,9 @@ import Navigation from "./components/navigation/navigation";
 import Films from "./components/category/films";
 import Episode from "./components/episode/episode";
 import People from "./components/category/people";
+import Species from "./components/category/species";
+import Starships from "./components/category/starships";
+import Vehicles from "./components/category/vehicles";
 
 const DATA_URL = 'https://swapi.py4e.com/api'
 
@@ -70,10 +73,19 @@ const App = () => {
     // Fetching Starship Data
     async function fetchStarshipData () {
         try {
-            const response = await fetch(`${DATA_URL}/starships`);
+            // Initializing Page Count for API
+            let pageCount = 1;
+            // Initializing empty array to hold contents of API (10 results per page)
+            let starshipArray = []
+            // For Loop to access all API elements (87 total, 9 pages)
+            for (pageCount ; pageCount <= 4; pageCount++) {
+
+                const response = await fetch(`${DATA_URL}/starships/?page=${pageCount}`);
+                const translatedData =  await response.json();
+                starshipArray.push(translatedData.results)
+            };
             
-            const translatedData =  await response.json();
-            setStarshipData(translatedData);
+            setStarshipData(starshipArray.flat());
            
         } catch (error) {
             console.log('error fetching all data', error);
@@ -83,10 +95,19 @@ const App = () => {
     // Fetching Species Data
     async function fetchSpeciesData () {
         try {
-            const response = await fetch(`${DATA_URL}/species`);
+            // Initializing Page Count for API
+            let pageCount = 1;
+            // Initializing empty array to hold contents of API (10 results per page)
+            let speciesArray = []
+            // For Loop to access all API elements (87 total, 9 pages)
+            for (pageCount ; pageCount <= 4; pageCount++) {
+
+                const response = await fetch(`${DATA_URL}/species/?page=${pageCount}`);
+                const translatedData =  await response.json();
+                speciesArray.push(translatedData.results)
+            };
             
-            const translatedData =  await response.json();
-            setSpeciesData(translatedData);
+            setSpeciesData(speciesArray.flat());
            
         } catch (error) {
             console.log('error fetching all data', error);
@@ -96,10 +117,19 @@ const App = () => {
     // Fetching Vehicle Data
     async function fetchVehicleData () {
         try {
-            const response = await fetch(`${DATA_URL}/vehicles`);
+            // Initializing Page Count for API
+            let pageCount = 1;
+            // Initializing empty array to hold contents of API (10 results per page)
+            let vehicleArray = []
+            // For Loop to access all API elements (87 total, 9 pages)
+            for (pageCount ; pageCount <= 4; pageCount++) {
+
+                const response = await fetch(`${DATA_URL}/vehicles/?page=${pageCount}`);
+                const translatedData =  await response.json();
+                vehicleArray.push(translatedData.results)
+            };
             
-            const translatedData =  await response.json();
-            setVehicleData(translatedData);
+            setVehicleData(vehicleArray.flat());
            
         } catch (error) {
             console.log('error fetching all data', error);
@@ -120,9 +150,12 @@ const App = () => {
         <Fragment>
             <Navigation />
             <Routes>
-                <Route path='/films' element={<Films filmData={filmData}/>} />
+                <Route path='/' element={<Films filmData={filmData}/>} />
                 <Route path='/films/:episodeId' element={<Episode filmData={filmData} peopleData={peopleData} />}/>
                 <Route path='/people' element={<People peopleData={peopleData}/>} />
+                <Route path='/species' element={<Species speciesData={speciesData}/>} />
+                <Route path='/starships' element={<Starships starshipData={starshipData}/>} />
+                <Route path='/vehicles' element={<Vehicles vehicleData={vehicleData}/>} />
             </Routes>
         
         </Fragment>
