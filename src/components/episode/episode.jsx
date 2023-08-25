@@ -42,10 +42,13 @@ const Episode = ({filmData, peopleData}) => {
         <Fragment>
             <br/>
             <h1 className='text-center'> {singleEpisode[0].title}</h1>
-            <div className='container episode-container mt-5'> 
-                
-                <h6> Screen Crawl </h6>
-                <span>"{singleEpisode[0].opening_crawl}"</span>
+            <div className='container episode-container mt-3 col-md-8'> 
+                    <div className='row justify-content-center'>
+                        <div className='col-md-8 scrolling-text text-wrap'>
+                            
+                            <p>"{singleEpisode[0].opening_crawl}"</p>
+                        </div>    
+                    </div>
             </div>
             <div className='container shadow'>
                 

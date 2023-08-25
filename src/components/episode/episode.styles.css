@@ -15,6 +15,7 @@ body {
     color: white;
     text-align: center;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 h6{
@@ -29,4 +30,19 @@ h6{
 .shadow {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 5.15) !important;
   }
+
+.scrolling-text {
+overflow: hidden;
+white-space: pre-wrap;
+animation: scroll 45s linear infinite;
+}
+
+@keyframes scroll {
+0% {
+    transform: translateY(100%);
+}
+100% {
+    transform: translateY(-100%);
+}
+}
 

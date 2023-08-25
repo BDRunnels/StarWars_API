@@ -33,12 +33,16 @@ const Films = ({filmData}) => {
                             <Link to={`/films/${film.episode_id}`} className='text-bg-dark'>    
                                 <div
                                     className='mask text-center'
+            
+                                >    
+                                    <div className='d-flex justify-content-center align-items-center h-100'
                                     style={{
-                                    background: 'linear-gradient(45deg, rgba(255,3,23,0.5), rgba(15, 14, 214, 0.5))',
+                                    background: 'linear-gradient(45deg, rgba(255,255,255,.5), rgba(15, 14, 214, .5))',
                                     cursor: 'pointer'
                                     }}
-                                >                                
-                                    <h1 className="mt-5 mx-1"> <b>{film.title}</b> </h1>
+                                    >
+                                            {/* <h1 className="mt-5 mx-1 text-white"> <b>{film.title}</b> </h1> */}
+                                    </div>                            
                                 </div>
                             </Link>     
                         </div>
