@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   MDBNavbar,
   MDBContainer,
@@ -14,11 +15,12 @@ import {
 } from 'mdb-react-ui-kit';
 
 const Navigation = () => {
-  const [showNavNoTogglerThird, setShowNavNoTogglerThird] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [hovered1, setHovered1] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
+  const [hovered5, setHovered5] = useState(false);
 
   // Button 1
   const handleHover1 = () => {
@@ -56,6 +58,14 @@ const Navigation = () => {
     setHovered4(false);
   };
 
+  const handleHover5 = () => {
+    setHovered5(true);
+  };
+
+  const handleUnhover5 = () => {
+    setHovered5(false);
+  };
+
   const buttonStyle1 = {
     backgroundColor: hovered1 ? 'white' : '',
     color: hovered1 ? 'black' : 'white',
@@ -80,58 +90,78 @@ const Navigation = () => {
     borderColor: hovered4 ? 'black' : 'white'
   };
 
+  const buttonStyle5 = {
+    backgroundColor: hovered5 ? 'white' : '',
+    color: hovered5 ? 'black' : 'white',
+    borderColor: hovered5 ? 'black' : 'white'
+  };
+
 
   return (
     <>
-      <MDBNavbar expand='md' light bgColor='black' className='navbar-dark' 
+      <MDBNavbar scrolling expand='md' light bgColor='black' className='shadow navbar-dark navbar-nav-scroll fixed-top' 
       style={{
         'borderBottom': 'white 1px solid',
-        'position': 'fixed',
-        'top': '0',
-        'zIndex': '999',
-        'width': '100vw'
-      }}>
+      }}
+      onMouseLeave={() => setIsOpen(false)}>
         <MDBContainer fluid>
           <MDBNavbarToggler
             type='button'
-            data-target='#navbarTogglerDemo03'
-            aria-controls='navbarTogglerDemo03'
+            data-target='#navbarCollapse'
+            aria-controls='navbarCollapse'
             aria-expanded='false'
             aria-label='Toggle navigation'
-            onClick={() => setShowNavNoTogglerThird(!showNavNoTogglerThird)}
+            onClick={() => setIsOpen(!isOpen)}
           >
             <MDBIcon icon='bars' fas  />
           </MDBNavbarToggler>
-          <MDBNavbarLink href='/'> <img className='img-thumbnail' src='https://filmartgallery.com/cdn/shop/t/27/assets/star-wars-banner.jpeg?v=80624120874934922901668841836' /> HOME </MDBNavbarLink>
-          <MDBCollapse navbar show={showNavNoTogglerThird} >
+          <Link to='/' className='nav-link' onClick={() => setIsOpen(false)} > <img className='img-thumbnail' src='https://filmartgallery.com/cdn/shop/t/27/assets/star-wars-banner.jpeg?v=80624120874934922901668841836' alt='Banner' /> </Link>
+          <MDBCollapse navbar id='navbarCollapse' show={isOpen} >
             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0 justify-content-end '>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='/species'>
+                {/* <MDBNavbarLink active aria-current='page' href='/species'> */}
+                <Link to='/species' className='nav-link' onClick={() => setIsOpen(false)} >
                     <MDBBtn  outline color='white' onMouseEnter={handleHover1} onMouseLeave={handleUnhover1} style={buttonStyle1} type='button'>
                         SPECIES
                     </MDBBtn>
-                </MDBNavbarLink>
+                {/* </MDBNavbarLink> */}
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='/people'>
-                <MDBBtn  outline color='white' onMouseEnter={handleHover2} onMouseLeave={handleUnhover2} style={buttonStyle2} type='button'>
+                {/* <MDBNavbarLink active aria-current='page' href='/people'> */}
+                <Link to='/people' className='nav-link' onClick={() => setIsOpen(false)} >
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover2} onMouseLeave={handleUnhover2} style={buttonStyle2} type='button'>
                         PEOPLE
                     </MDBBtn>
-                </MDBNavbarLink>
+                {/* </MDBNavbarLink> */}
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='/vehicles'>
-                <MDBBtn  outline color='white' onMouseEnter={handleHover3} onMouseLeave={handleUnhover3} style={buttonStyle3} type='button'>
+                {/* <MDBNavbarLink active aria-current='page' href='/vehicles'> */}
+                <Link to='/vehicles' className='nav-link' onClick={() => setIsOpen(false)}>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover3} onMouseLeave={handleUnhover3} style={buttonStyle3} type='button'>
                         VEHICLES
                     </MDBBtn>
-                </MDBNavbarLink>
+                {/* </MDBNavbarLink> */}
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='/starships'>
-                <MDBBtn  outline color='white' onMouseEnter={handleHover4} onMouseLeave={handleUnhover4} style={buttonStyle4} type='button'>
+                {/* <MDBNavbarLink active aria-current='page' href='/starships'> */}
+                <Link to='/starships' className='nav-link' onClick={() => setIsOpen(false)}>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover4} onMouseLeave={handleUnhover4} style={buttonStyle4} type='button'>
                         STARSHIPS
                     </MDBBtn>
-                </MDBNavbarLink>
+                </Link>
+                {/* </MDBNavbarLink> */}
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                {/* <MDBNavbarLink active aria-current='page' href='/starships'> */}
+                <Link to='/planets' className='nav-link' onClick={() => setIsOpen(false)}>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover5} onMouseLeave={handleUnhover5} style={buttonStyle5} type='button'>
+                        PLANETS
+                    </MDBBtn>
+                </Link>
+                {/* </MDBNavbarLink> */}
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>

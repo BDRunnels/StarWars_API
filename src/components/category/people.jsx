@@ -1,13 +1,15 @@
 import { Fragment } from "react";
 
+import GoToTop from "../gototop/goToTop";
 import './category.styles.css'
 
 const People = ({peopleData}) => {
 
     return (
         <Fragment>
+            <br/>
             <h1 className="text-center"> PEOPLE</h1>
-            <div className="container shadow">
+            <div className="container shadow mt-5">
                 <div className="row justify-content-center p-1">
                 {
                     peopleData ? peopleData.map((person) => {
@@ -29,6 +31,7 @@ const People = ({peopleData}) => {
                 }
                 </div>
             </div>
+            <GoToTop />
         </Fragment>
     );
 };

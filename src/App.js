@@ -11,6 +11,7 @@ import People from "./components/category/people";
 import Species from "./components/category/species";
 import Starships from "./components/category/starships";
 import Vehicles from "./components/category/vehicles";
+import Planets from "./components/category/planets";
 
 const DATA_URL = 'https://swapi.py4e.com/api'
 
@@ -42,7 +43,7 @@ const App = () => {
             let pageCount = 1;
             // Initializing empty array to hold contents of API (10 results per page)
             let peopleArray = []
-            // For Loop to access all API elements (87 total, 9 pages)
+            // For Loop to access all API elements
             for (pageCount ; pageCount <= 9; pageCount++) {
 
                 const response = await fetch(`${DATA_URL}/people/?page=${pageCount}`);
@@ -60,10 +61,19 @@ const App = () => {
     // Fetching Planets Data
     async function fetchPlanetsData () {
         try {
-            const response = await fetch(`${DATA_URL}/planets`);
+            // Initializing Page Count for API
+            let pageCount = 1;
+            // Initializing empty array to hold contents of API (10 results per page)
+            let planetsArray = []
+            // For Loop to access all API elements
+            for (pageCount ; pageCount <= 7; pageCount++) {
+
+                const response = await fetch(`${DATA_URL}/planets/?page=${pageCount}`);
+                const translatedData =  await response.json();
+                planetsArray.push(translatedData.results)
+            };
             
-            const translatedData =  await response.json();
-            setPlanetsData(translatedData);
+            setPlanetsData(planetsArray.flat());
            
         } catch (error) {
             console.log('error fetching all data', error);
@@ -77,7 +87,7 @@ const App = () => {
             let pageCount = 1;
             // Initializing empty array to hold contents of API (10 results per page)
             let starshipArray = []
-            // For Loop to access all API elements (87 total, 9 pages)
+            // For Loop to access all API elements
             for (pageCount ; pageCount <= 4; pageCount++) {
 
                 const response = await fetch(`${DATA_URL}/starships/?page=${pageCount}`);
@@ -99,7 +109,7 @@ const App = () => {
             let pageCount = 1;
             // Initializing empty array to hold contents of API (10 results per page)
             let speciesArray = []
-            // For Loop to access all API elements (87 total, 9 pages)
+            // For Loop to access all API elements
             for (pageCount ; pageCount <= 4; pageCount++) {
 
                 const response = await fetch(`${DATA_URL}/species/?page=${pageCount}`);
@@ -121,7 +131,7 @@ const App = () => {
             let pageCount = 1;
             // Initializing empty array to hold contents of API (10 results per page)
             let vehicleArray = []
-            // For Loop to access all API elements (87 total, 9 pages)
+            // For Loop to access all API elements
             for (pageCount ; pageCount <= 4; pageCount++) {
 
                 const response = await fetch(`${DATA_URL}/vehicles/?page=${pageCount}`);
@@ -156,6 +166,7 @@ const App = () => {
                 <Route path='/species' element={<Species speciesData={speciesData}/>} />
                 <Route path='/starships' element={<Starships starshipData={starshipData}/>} />
                 <Route path='/vehicles' element={<Vehicles vehicleData={vehicleData}/>} />
+                <Route path='/planets' element={<Planets planetsData={planetsData}/>} />
             </Routes>
         
         </Fragment>

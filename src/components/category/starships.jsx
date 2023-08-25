@@ -1,13 +1,15 @@
 import { Fragment } from "react";
 
+import GoToTop from "../gototop/goToTop";
 import './category.styles.css'
 
 const Starships = ({starshipData}) => {
     
     return (
         <Fragment>
+            <br/>
             <h1 className="text-center"> STARSHIPS </h1>
-            <div className="container shadow">
+            <div className="container shadow mt-5">
                 <div className="row justify-content-center p-5">
                 {
                     starshipData ? starshipData.map((ship, idx) => {
@@ -30,6 +32,7 @@ const Starships = ({starshipData}) => {
                 }
                 </div>
             </div>
+            <GoToTop />
         </Fragment>
     );
 };

@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
+import GoToTop from "../gototop/goToTop";
+
 const Films = ({filmData}) => {
     return(
         <Fragment>
+            <br/>
             <h1 className="text-center"> Star Wars Encylopedia </h1>
-            <div className="d-md-flex flex-wrap container-md">
+            <div className="d-md-flex flex-wrap container-md mt-5">
                 { filmData ? filmData.map((film) => {
                     let filmId = ''
                     switch (film.episode_id) {
@@ -45,6 +48,7 @@ const Films = ({filmData}) => {
                 }) : 'Films loading...'
                 }
             </div>
+            <GoToTop />
         </Fragment> 
    );
 };

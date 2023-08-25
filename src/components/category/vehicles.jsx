@@ -1,13 +1,15 @@
 import { Fragment } from "react";
 
+import GoToTop from "../gototop/goToTop";
 import './category.styles.css'
 
 const Vehicles = ({vehicleData}) => {
     console.log(vehicleData)
     return (
         <Fragment>
+            <br/>
             <h1 className="text-center"> VEHICLES </h1>
-            <div className="container shadow">
+            <div className="container shadow mt-5">
                 <div className="row justify-content-center p-5">
                 {
                     vehicleData ? vehicleData.map((vehicle, idx) => {
@@ -30,6 +32,7 @@ const Vehicles = ({vehicleData}) => {
                 }
                 </div>
             </div>
+            <GoToTop />
         </Fragment>
     );
 };

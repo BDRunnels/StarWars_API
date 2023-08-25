@@ -3,6 +3,7 @@ import { MDBAccordion, MDBAccordionItem, MDBIcon } from 'mdb-react-ui-kit';
 import { useParams } from "react-router-dom";
 import { Fragment, useState, useEffect } from "react";
 
+import GoToTop from '../gototop/goToTop';
 import "./episode.styles.css";
 
 const Episode = ({filmData, peopleData}) => {
@@ -39,8 +40,9 @@ const Episode = ({filmData, peopleData}) => {
 
     return (
         <Fragment>
+            <br/>
             <h1 className='text-center'> {singleEpisode[0].title}</h1>
-            <div className='container episode-container'> 
+            <div className='container episode-container mt-5'> 
                 
                 <h6> Screen Crawl </h6>
                 <span>"{singleEpisode[0].opening_crawl}"</span>
@@ -117,7 +119,8 @@ const Episode = ({filmData, peopleData}) => {
                         </ul>
                     </MDBAccordionItem>
                 </MDBAccordion>
-            </div>    
+            </div>
+            <GoToTop />    
         </Fragment>
     );
 };
