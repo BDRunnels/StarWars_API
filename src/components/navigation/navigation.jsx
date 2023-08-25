@@ -24,47 +24,30 @@ const Navigation = () => {
 
   // Button 1
   const handleHover1 = () => {
-    setHovered1(true);
+    setHovered1(!hovered1);
   };
 
-  const handleUnhover1 = () => {
-    setHovered1(false);
-  };
-
-  // Button 2
+   // Button 2
   const handleHover2 = () => {
-    setHovered2(true);
+    setHovered2(!hovered2);
   };
 
-  const handleUnhover2 = () => {
-    setHovered2(false);
-  };
-
-  // Button 1
+  // Button 3
   const handleHover3 = () => {
-    setHovered3(true);
+    setHovered3(!hovered3);
   };
 
-  const handleUnhover3 = () => {
-    setHovered3(false);
-  };
-
-  // Button 1
+  // Button 4
   const handleHover4 = () => {
-    setHovered4(true);
+    setHovered4(!hovered4);
   };
 
-  const handleUnhover4 = () => {
-    setHovered4(false);
-  };
-
+  // Button 5
   const handleHover5 = () => {
-    setHovered5(true);
+    setHovered5(!hovered5);
   };
 
-  const handleUnhover5 = () => {
-    setHovered5(false);
-  };
+ 
 
   const buttonStyle1 = {
     backgroundColor: hovered1 ? 'white' : '',
@@ -121,7 +104,7 @@ const Navigation = () => {
               <MDBNavbarItem>
                 {/* <MDBNavbarLink active aria-current='page' href='/species'> */}
                 <Link to='/species' className='nav-link' onClick={() => setIsOpen(false)} >
-                    <MDBBtn  outline color='white' onMouseEnter={handleHover1} onMouseLeave={handleUnhover1} style={buttonStyle1} type='button'>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover1} onMouseLeave={handleHover1} style={buttonStyle1} type='button'>
                         SPECIES
                     </MDBBtn>
                 {/* </MDBNavbarLink> */}
@@ -130,7 +113,7 @@ const Navigation = () => {
               <MDBNavbarItem>
                 {/* <MDBNavbarLink active aria-current='page' href='/people'> */}
                 <Link to='/people' className='nav-link' onClick={() => setIsOpen(false)} >
-                    <MDBBtn  outline color='white' onMouseEnter={handleHover2} onMouseLeave={handleUnhover2} style={buttonStyle2} type='button'>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover2} onMouseLeave={handleHover2} style={buttonStyle2} type='button'>
                         PEOPLE
                     </MDBBtn>
                 {/* </MDBNavbarLink> */}
@@ -139,7 +122,7 @@ const Navigation = () => {
               <MDBNavbarItem>
                 {/* <MDBNavbarLink active aria-current='page' href='/vehicles'> */}
                 <Link to='/vehicles' className='nav-link' onClick={() => setIsOpen(false)}>
-                    <MDBBtn  outline color='white' onMouseEnter={handleHover3} onMouseLeave={handleUnhover3} style={buttonStyle3} type='button'>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover3} onMouseLeave={handleHover3} style={buttonStyle3} type='button'>
                         VEHICLES
                     </MDBBtn>
                 {/* </MDBNavbarLink> */}
@@ -148,7 +131,7 @@ const Navigation = () => {
               <MDBNavbarItem>
                 {/* <MDBNavbarLink active aria-current='page' href='/starships'> */}
                 <Link to='/starships' className='nav-link' onClick={() => setIsOpen(false)}>
-                    <MDBBtn  outline color='white' onMouseEnter={handleHover4} onMouseLeave={handleUnhover4} style={buttonStyle4} type='button'>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover4} onMouseLeave={handleHover4} style={buttonStyle4} type='button'>
                         STARSHIPS
                     </MDBBtn>
                 </Link>
@@ -157,7 +140,7 @@ const Navigation = () => {
               <MDBNavbarItem>
                 {/* <MDBNavbarLink active aria-current='page' href='/starships'> */}
                 <Link to='/planets' className='nav-link' onClick={() => setIsOpen(false)}>
-                    <MDBBtn  outline color='white' onMouseEnter={handleHover5} onMouseLeave={handleUnhover5} style={buttonStyle5} type='button'>
+                    <MDBBtn  outline color='white' onMouseEnter={handleHover5} onMouseLeave={handleHover5} style={buttonStyle5} type='button'>
                         PLANETS
                     </MDBBtn>
                 </Link>

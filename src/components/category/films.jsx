@@ -8,7 +8,7 @@ const Films = ({filmData}) => {
         <Fragment>
             <br/>
             <h1 className="text-center"> Star Wars Encylopedia </h1>
-            <div className="d-md-flex flex-wrap container-md mt-5">
+            <div className="d-sm-flex flex-wrap container-md mt-5">
                 { filmData ? filmData.map((film) => {
                     let filmId = ''
                     switch (film.episode_id) {
@@ -28,7 +28,7 @@ const Films = ({filmData}) => {
                     };
                     return (
                     
-                        <div className='bg-image container-xs container-sm hover-overlay hover-zoom col-md-4 p-2 my-2 h-25' key={film.episode_id}>  
+                        <div className='bg-image container-fluid hover-overlay hover-zoom col-md-4 col-4 p-2 my-2 h-25' key={film.episode_id}>  
                             {filmId}
                             <Link to={`/films/${film.episode_id}`} className='text-bg-dark'>    
                                 <div
