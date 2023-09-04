@@ -13,6 +13,8 @@ import Starships from "./components/category/starships";
 import Vehicles from "./components/category/vehicles";
 import Planets from "./components/category/planets";
 
+import Category from "./components/category/category";
+
 const DATA_URL = 'https://swapi.py4e.com/api'
 
 const App = () => {
@@ -162,11 +164,19 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Films filmData={filmData}/>} />
                 <Route path='/films/:episodeId' element={<Episode filmData={filmData} peopleData={peopleData} />}/>
-                <Route path='/people' element={<People peopleData={peopleData}/>} />
+                {/* <Route path='/people' element={<People peopleData={peopleData}/>} />
                 <Route path='/species' element={<Species speciesData={speciesData}/>} />
                 <Route path='/starships' element={<Starships starshipData={starshipData}/>} />
                 <Route path='/vehicles' element={<Vehicles vehicleData={vehicleData}/>} />
-                <Route path='/planets' element={<Planets planetsData={planetsData}/>} />
+                <Route path='/planets' element={<Planets planetsData={planetsData}/>} /> */}
+                <Route path='/:category' element={<Category 
+                    peopleData={peopleData} 
+                    speciesData={speciesData}
+                    starshipData={starshipData}
+                    vehicleData={vehicleData}
+                    planetsData={planetsData}
+                    />} 
+                />
             </Routes>
         
         </Fragment>
