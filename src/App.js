@@ -1,17 +1,10 @@
 import { useState, useEffect, Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { MDBContainer } from 'mdb-react-ui-kit';
-
-
 import Navigation from "./components/navigation/navigation";
 import Films from "./components/category/films";
 import Episode from "./components/episode/episode";
-import People from "./components/category/people";
-import Species from "./components/category/species";
-import Starships from "./components/category/starships";
-import Vehicles from "./components/category/vehicles";
-import Planets from "./components/category/planets";
+
 
 import Category from "./components/category/category";
 
@@ -164,12 +157,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Films filmData={filmData}/>} />
                 <Route path='/films/:episodeId' element={<Episode filmData={filmData} peopleData={peopleData} />}/>
-                {/* <Route path='/people' element={<People peopleData={peopleData}/>} />
-                <Route path='/species' element={<Species speciesData={speciesData}/>} />
-                <Route path='/starships' element={<Starships starshipData={starshipData}/>} />
-                <Route path='/vehicles' element={<Vehicles vehicleData={vehicleData}/>} />
-                <Route path='/planets' element={<Planets planetsData={planetsData}/>} /> */}
-                <Route path='/:category' element={<Category 
+                <Route path='/:categoryURL' element={<Category 
                     peopleData={peopleData} 
                     speciesData={speciesData}
                     starshipData={starshipData}

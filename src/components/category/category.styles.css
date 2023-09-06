@@ -24,3 +24,10 @@
     margin-bottom: 2%;
 }
 
+.img {
+    padding: 0.25rem;
+    background-color: rgb(104, 99, 99);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+}
+

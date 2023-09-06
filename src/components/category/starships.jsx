@@ -30,15 +30,15 @@ const Starships = ({starshipData}) => {
                 {totalPages > 1 && (
                         <MDBPagination center className="p-1 cursor">
                             <MDBPaginationItem disabled={currentPage === 1}>
-                                <MDBPaginationLink aria-label="Previous" onClick={() => handlePageChange(currentPage - 1)}><MDBIcon fas icon="angle-double-left" /></MDBPaginationLink>
+                                <MDBPaginationLink className="text-success mx-1" aria-label="Previous" onClick={() => handlePageChange(currentPage - 1)}><MDBIcon fas icon="angle-double-left" /></MDBPaginationLink>
                             </MDBPaginationItem>
                             {Array.from({ length: totalPages }).map((_, index) => (
                                 <MDBPaginationItem key={index} active={index + 1 === currentPage}>
-                                    <MDBPaginationLink onClick={() => handlePageChange(index + 1)}> {index + 1}</MDBPaginationLink>
+                                    <MDBPaginationLink className="text-info" onClick={() => handlePageChange(index + 1)}> {index + 1}</MDBPaginationLink>
                                 </MDBPaginationItem>
                             ))}
                             <MDBPaginationItem disabled={currentPage === totalPages}>
-                                <MDBPaginationLink aria-label="Next" onClick={() => handlePageChange(currentPage + 1)}><MDBIcon fas icon="angle-double-right" /></MDBPaginationLink>
+                                <MDBPaginationLink className="text-success mx-1" aria-label="Next" onClick={() => handlePageChange(currentPage + 1)}><MDBIcon fas icon="angle-double-right" /></MDBPaginationLink>
                             </MDBPaginationItem>
                         </MDBPagination>
                 )}
