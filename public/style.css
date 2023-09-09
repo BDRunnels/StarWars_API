@@ -1,12 +1,12 @@
 body > * {
-    background: rgb(74, 73, 73);
+    background: black;
     color: white;
     margin-top: 7vh;
-}
+} 
 
-/* .container {
+.container {
     border: 2px solid white;
-} */
+}
 
 .d-sm-grid {
     max-width: 768px;
@@ -20,13 +20,8 @@ body > * {
 .bg-image {
     /* height: 10vh !important;
     width: 25vw !important; */
-    border-radius: 0;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 5.15) !important;
+    /* border-radius: 20%; */
+    box-shadow: 0 .05em .25rem rgba(255, 255, 255) !important;
     background-color: black;
 }
 
-.custom-hoverable:hover {
-    background-color: white;
-    color: #ff3;
-    border-color: blue;
-}

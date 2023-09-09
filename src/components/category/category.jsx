@@ -113,7 +113,7 @@ const Category = (props) => {
         <Fragment>
             <br/>
             <h1 className="text-center"> {getCategoryName(categoryURL)}</h1>
-            <div className="container shadow mt-5">
+            <div className="container shadow-category mt-5">
                 {totalPages > 1 && (
                         <MDBPagination center className="p-1 cursor">
                             <MDBPaginationItem disabled={currentPage === 1}>

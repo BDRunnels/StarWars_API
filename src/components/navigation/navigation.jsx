@@ -85,6 +85,7 @@ const Navigation = () => {
       <MDBNavbar scrolling expand='md' light bgColor='black' className='shadow navbar-dark navbar-nav-scroll fixed-top' 
       style={{
         'borderBottom': 'white 1px solid',
+        'opacity': '.88'
       }}
       onMouseLeave={() => setIsOpen(false)}>
         <MDBContainer fluid>

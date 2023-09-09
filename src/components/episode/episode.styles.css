@@ -1,5 +1,5 @@
 body {
-    background: rgb(74, 73, 73);
+    background: black;
     color: white;
     margin-top: 7vh;
 }
@@ -29,6 +29,7 @@ h6{
 
 .shadow {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 5.15) !important;
+
   }
 
 .scrolling-text {
@@ -46,3 +47,7 @@ animation: scroll 45s linear infinite;
 }
 }
 
+.border-none {
+    border: none;
+    max-width: 75vw !important;
+}

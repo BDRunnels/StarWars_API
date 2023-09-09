@@ -50,7 +50,7 @@ const Episode = ({filmData, peopleData}) => {
                         </div>    
                     </div>
             </div>
-            <div className='container shadow'>
+            <div className='container border-none shadow'>
                 
                 <MDBAccordion>
                     <MDBAccordionItem  headerClassName='accHead' bodyClassName='accItem' collapseId={1} headerTitle={<><MDBIcon fas icon="camera" /> &nbsp; Movie Information</>}>
