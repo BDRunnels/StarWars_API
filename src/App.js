@@ -156,7 +156,15 @@ const App = () => {
             <Navigation />
             <Routes>
                 <Route path='/' element={<Films filmData={filmData}/>} />
-                <Route path='/films/:episodeId' element={<Episode filmData={filmData} peopleData={peopleData} />}/>
+                <Route path='/films/:episodeId' element={<Episode 
+                    filmData={filmData} 
+                    peopleData={peopleData} 
+                    speciesData={speciesData}
+                    starshipData={starshipData}
+                    vehicleData={vehicleData}
+                    planetsData={planetsData}
+                    />}
+                />
                 <Route path='/:categoryURL' element={<Category 
                     peopleData={peopleData} 
                     speciesData={speciesData}
