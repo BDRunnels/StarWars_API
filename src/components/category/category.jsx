@@ -161,7 +161,7 @@ const Category = (props) => {
                             <MDBModalTitle>{selectedCategory && selectedCategory.name.toUpperCase() + " INFORMATION"}</MDBModalTitle>
                             <MDBBtn className='btn-close' color='none' onClick={closeModal}></MDBBtn>
                         </MDBModalHeader>
-                        <MDBModalBody className="bg-black">
+                        <MDBModalBody className="bg-black border">
                             { 
                                 selectedCategory && categoryURL === "planets" && (
                                     <Fragment>
@@ -226,11 +226,11 @@ const Category = (props) => {
                                 )
                             }
                         </MDBModalBody>
-                        <MDBModalFooter>
+                        {/* <MDBModalFooter className="bg-black"> */}
                         {/* <MDBBtn className="btn-close" onClick={closeModal}>
                             Close
                         </MDBBtn> */}
-                        </MDBModalFooter>
+                        {/* </MDBModalFooter> */}
                     </MDBModalContent>
                     </MDBModalDialog>
                 </MDBModal>
