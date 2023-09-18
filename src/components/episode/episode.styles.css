@@ -1,4 +1,4 @@
-body {
+body.dark-mode {
     background: black;
     color: white;
     margin-top: 7vh;
@@ -8,6 +8,7 @@ body {
     background-color: black;
     color: white;
 }
+
 
 .episode-container {
     border: 2px solid white;

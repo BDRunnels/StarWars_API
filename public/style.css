@@ -1,9 +1,10 @@
-body > * {
-    background: black;
-    color: white;
+body.light-mode {
+    background: white;
+    color: black;
     margin-top: 7vh;
     overflow: scroll;
 } 
+
 
 .container {
     border: 2px solid white;
@@ -25,4 +26,6 @@ body > * {
     box-shadow: 0 .05em .25rem rgba(255, 255, 255) !important;
     background-color: black;
 }
+
+
 

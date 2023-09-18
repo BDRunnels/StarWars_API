@@ -31,10 +31,9 @@ const Episode = ({filmData, peopleData, speciesData, starshipData, vehicleData, 
                         </div>    
                     </div>
             </div>
-            <div className='container border-none shadow'>
-                
+            <div className='container border-none shadow bg-black'>
                 <MDBAccordion>
-                    <MDBAccordionItem  headerClassName='accHead' bodyClassName='accItem' collapseId={1} headerTitle={<><MDBIcon fas icon="camera" /> &nbsp; Movie Information</>}>
+                    <MDBAccordionItem headerClassName='accHead' bodyClassName='accItem' collapseId={1} headerTitle={<><MDBIcon fas icon="camera" /> &nbsp; Movie Information</>}>
                         <ul className="text-wrap">
                             <li> Directed By: {singleEpisode[0].director}</li>
                             <li> Produced By: {singleEpisode[0].producer}</li>

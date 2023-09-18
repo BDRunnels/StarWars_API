@@ -12,8 +12,8 @@ const Footer = () => {
     const [iconAnimation, setIconAnimation] = useState('')
     return(
         <Fragment>
-            <MDBFooter className='bg-none text-center text-white mt-5'>
-                <MDBContainer className='p-4 shadow-none border-none bg-black'>
+            <MDBFooter className='text-center mt-5'>
+                <MDBContainer className='p-4 shadow-none border-none bg-transparent'>
                     <section className='mb-1'>
                         <MDBBtn color="link" floating className='m-1' href='mailto:bryan.d.runnels@gmail.com' target="_blank" role='button'>
                             <MDBIcon size="2x" fab icon='google' />
@@ -27,19 +27,15 @@ const Footer = () => {
                         </MDBBtn>
                     </section>
                     <div className='text-center mb-1'>
-                        Developed by:
-                        <a className='text-white' href='https://github.com/BDRunnels'>
-                            {" Bryan Runnels"}
-                        </a>
+                        Developed by: Bryan Runnels
+                        
                     </div>
                     <MDBBtn color="link" floating className='m-1' href='https://swapi.py4e.com/' target="_blank" role='button' >
                         <MDBIcon size="2x" fas icon="jedi" />
                     </MDBBtn>
                     <div className='text-center mb-4'>
-                        Powered by:
-                        <a className='text-white' href='https://github.com/BDRunnels'>
-                            {" SWAPI"}
-                        </a>
+                        Powered by: SWAPI
+                        
                     </div>
                 </MDBContainer>
 

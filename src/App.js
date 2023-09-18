@@ -8,6 +8,7 @@ import Footer from "./components/footer/footer";
 
 
 import Category from "./components/category/category";
+import Toggler from "./components/modeToggler/modeToggler";
 
 const DATA_URL = 'https://swapi.py4e.com/api'
 
@@ -155,6 +156,7 @@ const App = () => {
     return (
         <Fragment>
             <Navigation />
+            <Toggler />
             <Routes>
                 <Route path='/' element={<Films filmData={filmData}/>} />
                 <Route path='/films/:episodeId' element={<Episode 
