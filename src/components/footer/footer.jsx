@@ -22,14 +22,14 @@ const Footer = () => {
                             <MDBIcon size="2x" fab icon='linkedin-in' />
                         </MDBBtn>
 
-                        <MDBBtn color="link" floating className='m-1' href='https://github.com/BDRunnels' target="_blank" role='button'>
+                        <MDBBtn color="link" floating className='m-1' href='https://github.com/BDRunnels/StarWars_API' target="_blank" role='button'>
                             <MDBIcon size="2x" fab icon='github' />
                         </MDBBtn>
                     </section>
-                    <div className='text-center mb-1'>
+                    <div className='text-center mb-4'>
                         Developed by: Bryan Runnels
                     </div>
-                    <section>
+                    {/* <section>
                         <MDBBtn outline color="info" floating className='m-1' href='https://react.dev/' target="_blank" role='button' >
                             <MDBIcon size="2x" fab icon="react" />
                         </MDBBtn>
@@ -42,7 +42,7 @@ const Footer = () => {
                     </section>
                     <div className="text-center mb-4">
                         Powered by: React / MDBootstrap / SWAPI
-                    </div>
+                    </div> */}
                 </MDBContainer>
 
                 
