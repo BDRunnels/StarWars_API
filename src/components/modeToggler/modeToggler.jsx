@@ -17,7 +17,7 @@ const Toggler = () => {
     }, [theme])
 
     return(
-        <div className="pt-1 text-end">
+        <div className="pt-2 text-end">
             <MDBSwitch inline id='flexSwitchCheckDefault' label={theme === 'dark-mode' ? 'Dark' : 'Light'} className='bg-secondary' onClick={toggleTheme} />
         </div>
     );

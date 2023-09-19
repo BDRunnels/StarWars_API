@@ -97,7 +97,7 @@ const Navigation = () => {
             aria-label='Toggle navigation'
             onClick={() => setIsOpen(!isOpen)}
           >
-            { !isOpen ? (<MDBIcon icon='bars' fas  />) : (<MDBIcon fas icon="angle-double-down" />)}
+            { !isOpen ? (<MDBIcon icon='bars' fas  />) : (<MDBIcon fas icon="window-close" />)}
           </MDBNavbarToggler>
           <Link to='/' className='nav-link' onClick={() => setIsOpen(false)} > <img className='img-thumbnail' src='https://filmartgallery.com/cdn/shop/t/27/assets/star-wars-banner.jpeg?v=80624120874934922901668841836' alt='Banner' /> </Link>
           <MDBCollapse navbar id='navbarCollapse' show={isOpen} >

@@ -6,7 +6,6 @@ import Films from "./components/category/films";
 import Episode from "./components/episode/episode";
 import Footer from "./components/footer/footer";
 
-
 import Category from "./components/category/category";
 import Toggler from "./components/modeToggler/modeToggler";
 

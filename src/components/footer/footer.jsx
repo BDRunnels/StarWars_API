@@ -28,14 +28,20 @@ const Footer = () => {
                     </section>
                     <div className='text-center mb-1'>
                         Developed by: Bryan Runnels
-                        
                     </div>
-                    <MDBBtn color="link" floating className='m-1' href='https://swapi.py4e.com/' target="_blank" role='button' >
-                        <MDBIcon size="2x" fas icon="jedi" />
-                    </MDBBtn>
-                    <div className='text-center mb-4'>
-                        Powered by: SWAPI
-                        
+                    <section>
+                        <MDBBtn outline color="info" floating className='m-1' href='https://react.dev/' target="_blank" role='button' >
+                            <MDBIcon size="2x" fab icon="react" />
+                        </MDBBtn>
+                        <MDBBtn outline color="primary" floating className='m-1' href='https://mdbootstrap.com/' target="_blank" role='button' >
+                            <MDBIcon size="2x" fab icon="bootstrap" />
+                        </MDBBtn>
+                        <MDBBtn outline color="danger" floating className='m-1' href='https://swapi.py4e.com/' target="_blank" role='button' >
+                            <MDBIcon size="2x" fas icon="jedi" />
+                        </MDBBtn>
+                    </section>
+                    <div className="text-center mb-4">
+                        Powered by: React / MDBootstrap / SWAPI
                     </div>
                 </MDBContainer>
 
