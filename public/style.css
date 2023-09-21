@@ -5,6 +5,17 @@ body.light-mode {
     overflow: scroll;
 } 
 
+body.jedi-mode {
+    background: #0dcaf0;
+    color: #ffc107;
+    margin-top: 7vh;
+}
+
+body.sith-mode {
+    background: #dc3545;
+    color: #212529;
+    margin-top: 7vh;
+}
 
 .container {
     border: 2px solid white;
